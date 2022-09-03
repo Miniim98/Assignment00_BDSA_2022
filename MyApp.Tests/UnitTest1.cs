@@ -7,6 +7,7 @@ public class UnitTest1
     {
         // Arrange
         var program = new Program();
+        
         // Act
         var answer = program.IsLeapYear(2004);
 
@@ -18,6 +19,7 @@ public class UnitTest1
     {
         // Arrange
         var program = new Program();
+
         // Act
         var answer = program.IsLeapYear(2001);
 
@@ -29,6 +31,7 @@ public class UnitTest1
     {
         // Arrange
         var program = new Program();
+
         // Act
         var answer = program.IsLeapYear(1700);
 
@@ -40,6 +43,7 @@ public class UnitTest1
     {
         // Arrange
         var program = new Program();
+
         // Act
         var answer = program.IsLeapYear(1600);
 
@@ -52,6 +56,7 @@ public class UnitTest1
     {
         // Arrange
         var program = new Program();
+
         // Act
         var answer = program.IsLeapYear(1864);
 
