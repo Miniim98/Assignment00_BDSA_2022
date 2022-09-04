@@ -70,12 +70,79 @@ public class UnitTest1
         Console.SetIn(reader);
 
         // Act
-        
         Program.userInterfaceLeapYear();
 
         // Assert
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("yay");
+        output.Should().Be("yay!");
+    }
+
+    [Fact]
+      public void test_of_user_input_and_output_nay()
+    {
+        // Arrange
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("1866");
+        Console.SetIn(reader);
+
+        // Act
+        Program.userInterfaceLeapYear();
+
+        // Assert
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("nay!");
+    }
+
+    [Fact]
+    public void test_input_is_not_an_int()
+    {
+        // Arrange
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("hey");
+        Console.SetIn(reader);
+
+        // Act
+        Program.userInterfaceLeapYear();
+
+        // Assert
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("Please input an integer!");
+    }
+
+    [Fact]
+    public void test_input_is_lower_than_1582()
+    {
+        // Arrange
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("1500");
+        Console.SetIn(reader);
+
+        // Act
+        Program.userInterfaceLeapYear();
+
+        // Assert
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("Please input a year equal or higher than 1582");
+    }
+
+      [Fact]
+    public void test_input_is_an_int_and_a_character()
+    {
+        // Arrange
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("1900a");
+        Console.SetIn(reader);
+
+        // Act
+        Program.userInterfaceLeapYear();
+
+        // Assert
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("Please input an integer!");
     }
     
 }
