@@ -6,7 +6,7 @@ public class UnitTest1
     public void first_rule_divided_by_4_true()
     {
         // Arrange
-        
+         
 
         // Act
         var answer = Program.IsLeapYear(2004);
