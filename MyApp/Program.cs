@@ -15,6 +15,7 @@ public class Program
         {
            Console.WriteLine("\n[1] check a year \n[2] exit"); 
            var answer = Console.ReadLine();
+           
            if (answer == "1")
            {
             Console.WriteLine("Please type the year that you want to check and press enter!");
