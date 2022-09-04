@@ -127,7 +127,6 @@ public class UnitTest1
         var output = writer.GetStringBuilder().ToString().TrimEnd();
         output.Should().Be("Please input a year equal or higher than 1582");
     }
-    
 
       [Fact]
     public void test_input_is_an_int_and_a_character()
