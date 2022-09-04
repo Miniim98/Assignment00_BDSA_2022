@@ -6,10 +6,10 @@ public class UnitTest1
     public void first_rule_divided_by_4_true()
     {
         // Arrange
-        var program = new Program();
         
+
         // Act
-        var answer = program.IsLeapYear(2004);
+        var answer = Program.IsLeapYear(2004);
 
         // Assert
         answer.Should().Be(true);
@@ -18,10 +18,9 @@ public class UnitTest1
       public void first_rule_divided_by_4_false()
     {
         // Arrange
-        var program = new Program();
 
         // Act
-        var answer = program.IsLeapYear(2001);
+        var answer = Program.IsLeapYear(2001);
 
         // Assert
         answer.Should().Be(false);
@@ -30,10 +29,9 @@ public class UnitTest1
       public void rule_divided_by_100()
     {
         // Arrange
-        var program = new Program();
 
         // Act
-        var answer = program.IsLeapYear(1700);
+        var answer = Program.IsLeapYear(1700);
 
         // Assert
         answer.Should().Be(false);
@@ -42,10 +40,9 @@ public class UnitTest1
       public void rule_divided_by_400()
     {
         // Arrange
-        var program = new Program();
 
         // Act
-        var answer = program.IsLeapYear(1600);
+        var answer = Program.IsLeapYear(1600);
 
         // Assert
         answer.Should().Be(true);
@@ -55,13 +52,30 @@ public class UnitTest1
       public void rule_divided_by_4()
     {
         // Arrange
-        var program = new Program();
 
         // Act
-        var answer = program.IsLeapYear(1864);
+        var answer = Program.IsLeapYear(1864);
 
         // Assert
         answer.Should().Be(true);
+    }
+
+    [Fact]
+      public void test_of_user_input_and_output_yay()
+    {
+        // Arrange
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("1864");
+        Console.SetIn(reader);
+
+        // Act
+        
+        Program.userInterfaceLeapYear();
+
+        // Assert
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("yay");
     }
     
 }
