@@ -7,8 +7,6 @@ public class Program
     {
         HandleUserInteraction();
     }
-    
-    
 
     private static void HandleUserInteraction()
     {
